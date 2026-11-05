@@ -54,7 +54,7 @@
       (battery ?d ?before)
       (flight-cost ?from ?to ?c)
       (battery-after ?before ?c ?left))            ; check battery is enough
-
+    :effect (and
       (not (at ?d ?from))
       (at ?d ?to)
       (not (battery ?d ?before))
@@ -111,7 +111,7 @@
       (at ?d ?l)
       (charging-station ?l)
       (battery ?d ?l1)
-      (next-level ?l1 ?l2)                
+      (next-level ?l1 ?l2))                        ; no next-level from max: cannot overcharge
     :effect (and
       (not (battery ?d ?l1))
       (battery ?d ?l2)

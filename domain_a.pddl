@@ -37,6 +37,7 @@
     ;; simulate the increment and reduction of battery levels
     (flight-cost ?from ?to - location ?c - level)  ; flying ?from -> ?to costs ?c levels
     (battery-after ?before ?c ?left - level)       ; ?before - ?c = ?left (only if >= 0)
+    (next-level ?l1 ?l2 - level)                   ; ?l2 = ?l1 + 1 (declared so both models share the problem files; not used in Model A)
     (max-level ?l - level))                        ; full battery capacity
 
   (:functions
@@ -53,7 +54,7 @@
       (battery ?d ?before)
       (flight-cost ?from ?to ?c)
       (battery-after ?before ?c ?left))            ; check battery is enough
-
+    :effect (and
       (not (at ?d ?from))
       (at ?d ?to)
       (not (battery ?d ?before))

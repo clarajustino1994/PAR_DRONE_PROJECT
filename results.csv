@@ -1,0 +1,13 @@
+instance,model,planner,solved,search_time_s,planner_time_s,plan_length,plan_cost,expanded_states,peak_memory_kb,best_plan,val
+large,A,lama-first,yes,0.015281,2.31,29,34,52,183256,large-A-lamafirst.plan,valid (34)
+large,A,astar(lmcut()),yes,2.273572,4.50,20,23,2240,183256,large-A-astar.plan,valid (23)
+large,A,lama (anytime),"yes (anytime, stopped at time limit)",,299.26,20,23,148029,649360,large-A-lama.5.plan,valid (23)
+large,B,lama-first,yes,0.082397,1.99,21,24,1441,183256,large-B-lamafirst.plan,valid (24)
+large,B,astar(lmcut()),yes,2.177411,4.07,20,23,2235,183256,large-B-astar.plan,valid (23)
+large,B,lama (anytime),"yes (anytime, stopped at time limit)",,298.38,20,23,455144,581296,large-B-lama.2.plan,valid (23)
+large-1drone,A,lama-first,yes,0.013128,1.73,40,51,85,183256,large-1drone-A-lamafirst.plan,valid (51)
+large-1drone,A,astar(lmcut()),yes,0.335765,2.00,35,44,2463,183256,large-1drone-A-astar.plan,valid (44)
+large-1drone,A,lama (anytime),yes,1.251954,2.92,35,44,33677,183260,large-1drone-A-lama.3.plan,valid (44)
+large-1drone,B,lama-first,yes,0.027892,1.77,62,71,428,183256,large-1drone-B-lamafirst.plan,valid (71)
+large-1drone,B,astar(lmcut()),yes,0.749781,2.43,54,63,6345,183256,large-1drone-B-astar.plan,valid (63)
+large-1drone,B,lama (anytime),yes,1.069557,2.76,55,63,22766,183260,large-1drone-B-lama.4.plan,valid (63)
