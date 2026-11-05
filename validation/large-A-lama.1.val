@@ -11,7 +11,7 @@ Type-checking recharge
 Checking plan: plans/large-A-lama.1.plan
 Plan to validate:
 
-Plan size: 29
+Plan size: 71
 1:
 (pick-up-supply d1 medkit1 depot-w)
  
@@ -19,85 +19,211 @@ Plan size: 29
 (pick-up-supply d2 comm1 depot-e)
  
 3:
-(fly d1 depot-w w1 b6 b1 b5)
+(fly d1 depot-w w1 b5 b1 b4)
  
 4:
-(inspect d1 w1)
+(deliver-supply d1 medkit1 w1)
  
 5:
-(fly d2 depot-e e1 b6 b1 b5)
+(fly d1 w1 w2 b4 b2 b2)
  
 6:
-(deliver-supply d2 comm1 e1)
+(inspect d1 w2)
  
 7:
-(fly d2 e1 e2 b5 b2 b3)
+(fly d1 w2 w3 b2 b1 b1)
  
 8:
-(fly d3 ch-n n1 b6 b1 b5)
+(fly d1 w3 s1 b1 b1 b0)
  
 9:
-(inspect d3 n1)
+(inspect d1 s1)
  
 10:
-(fly d3 n1 n2 b5 b2 b3)
+(fly d3 ch-n hub b5 b2 b3)
  
 11:
-(inspect d3 n2)
+(fly d2 depot-e e1 b5 b1 b4)
  
 12:
-(fly d1 w1 w2 b5 b1 b4)
+(deliver-supply d2 comm1 e1)
  
 13:
-(deliver-supply d1 medkit1 w2)
+(fly d2 e1 depot-e b4 b1 b3)
  
 14:
-(fly d1 w2 depot-w b4 b2 b2)
- 
-15:
-(pick-up-supply d1 medkit2 depot-w)
- 
-16:
-(fly d1 depot-w w1 b2 b1 b1)
- 
-17:
-(deliver-supply d1 medkit2 w1)
- 
-18:
-(fly d2 e2 e1 b3 b2 b1)
- 
-19:
-(fly d2 e1 ch-e b1 b1 b0)
- 
-20:
-(recharge d2 ch-e b0 b6)
- 
-21:
-(fly d2 ch-e e2 b6 b1 b5)
- 
-22:
-(fly d2 e2 e1 b5 b2 b3)
- 
-23:
-(fly d2 e1 depot-e b3 b1 b2)
- 
-24:
 (pick-up-supply d2 water1 depot-e)
  
+15:
+(fly d2 depot-e e1 b3 b1 b2)
+ 
+16:
+(fly d2 e1 e2 b2 b2 b0)
+ 
+17:
+(deliver-supply d2 water1 e2)
+ 
+18:
+(fly d3 hub ch-n b3 b2 b1)
+ 
+19:
+(recharge d3 ch-n b1 b5)
+ 
+20:
+(fly d3 ch-n n1 b5 b1 b4)
+ 
+21:
+(inspect d3 n1)
+ 
+22:
+(fly d3 n1 ch-n b4 b1 b3)
+ 
+23:
+(fly d3 ch-n hub b3 b2 b1)
+ 
+24:
+(recharge d3 hub b1 b5)
+ 
 25:
-(fly d2 depot-e e1 b2 b1 b1)
+(fly d3 hub depot-e b5 b2 b3)
  
 26:
-(fly d2 e1 ch-e b1 b1 b0)
+(pick-up-supply d3 comm2 depot-e)
  
 27:
-(recharge d2 ch-e b0 b6)
+(fly d3 depot-e hub b3 b2 b1)
  
 28:
-(fly d2 ch-e e2 b6 b1 b5)
+(recharge d3 hub b1 b5)
  
 29:
-(deliver-supply d2 water1 e2)
+(fly d3 hub ch-n b5 b2 b3)
+ 
+30:
+(fly d3 ch-n n1 b3 b1 b2)
+ 
+31:
+(fly d3 n1 ch-n b2 b1 b1)
+ 
+32:
+(recharge d3 ch-n b1 b5)
+ 
+33:
+(fly d3 ch-n n1 b5 b1 b4)
+ 
+34:
+(fly d3 n1 n2 b4 b2 b2)
+ 
+35:
+(deliver-supply d3 comm2 n2)
+ 
+36:
+(fly d3 n2 n3 b2 b1 b1)
+ 
+37:
+(inspect d3 n3)
+ 
+38:
+(fly d3 n3 ch-n b1 b1 b0)
+ 
+39:
+(recharge d3 ch-n b0 b5)
+ 
+40:
+(fly d3 ch-n hub b5 b2 b3)
+ 
+41:
+(fly d3 hub s1 b3 b2 b1)
+ 
+42:
+(fly d3 s1 ch-s b1 b1 b0)
+ 
+43:
+(recharge d3 ch-s b0 b5)
+ 
+44:
+(fly d3 ch-s s1 b5 b1 b4)
+ 
+45:
+(fly d3 s1 w3 b4 b1 b3)
+ 
+46:
+(fly d3 w3 s1 b3 b1 b2)
+ 
+47:
+(fly d3 s1 hub b2 b2 b0)
+ 
+48:
+(recharge d3 hub b0 b5)
+ 
+49:
+(fly d3 hub depot-w b5 b2 b3)
+ 
+50:
+(pick-up-supply d3 water2 depot-w)
+ 
+51:
+(fly d3 depot-w hub b3 b2 b1)
+ 
+52:
+(recharge d3 hub b1 b5)
+ 
+53:
+(fly d3 hub s1 b5 b2 b3)
+ 
+54:
+(fly d3 s1 w3 b3 b1 b2)
+ 
+55:
+(deliver-supply d3 water2 w3)
+ 
+56:
+(fly d3 w3 s1 b2 b1 b1)
+ 
+57:
+(fly d3 s1 ch-s b1 b1 b0)
+ 
+58:
+(recharge d3 ch-s b0 b5)
+ 
+59:
+(fly d3 ch-s s1 b5 b1 b4)
+ 
+60:
+(fly d3 s1 ch-s b4 b1 b3)
+ 
+61:
+(fly d3 ch-s s1 b3 b1 b2)
+ 
+62:
+(fly d3 s1 hub b2 b2 b0)
+ 
+63:
+(recharge d3 hub b0 b5)
+ 
+64:
+(fly d3 hub depot-w b5 b2 b3)
+ 
+65:
+(pick-up-supply d3 medkit2 depot-w)
+ 
+66:
+(fly d3 depot-w hub b3 b2 b1)
+ 
+67:
+(recharge d3 hub b1 b5)
+ 
+68:
+(fly d3 hub s1 b5 b2 b3)
+ 
+69:
+(fly d3 s1 ch-s b3 b1 b2)
+ 
+70:
+(fly d3 ch-s s2 b2 b2 b0)
+ 
+71:
+(deliver-supply d3 medkit2 s2)
  
 
 Plan Validation details
@@ -117,184 +243,458 @@ Updating (total-cost) (1) by 1 increase
 
 Checking next happening (time 3)
 Deleting (at d1 depot-w)
-Deleting (battery d1 b6)
+Deleting (battery d1 b5)
 Adding (at d1 w1)
-Adding (battery d1 b5)
+Adding (battery d1 b4)
 Updating (total-cost) (2) by 1 increase
 
 Checking next happening (time 4)
-Adding (inspected w1)
+Deleting (carrying d1 medkit1)
+Deleting (needs w1 medkit1)
+Adding (empty d1)
+Adding (delivered medkit1 w1)
 Updating (total-cost) (3) by 1 increase
 
 Checking next happening (time 5)
-Deleting (at d2 depot-e)
-Deleting (battery d2 b6)
-Adding (at d2 e1)
-Adding (battery d2 b5)
-Updating (total-cost) (4) by 1 increase
+Deleting (at d1 w1)
+Deleting (battery d1 b4)
+Adding (at d1 w2)
+Adding (battery d1 b2)
+Updating (total-cost) (4) by 2 increase
 
 Checking next happening (time 6)
+Adding (inspected w2)
+Adding (accessible w3)
+Updating (total-cost) (6) by 1 increase
+
+Checking next happening (time 7)
+Deleting (at d1 w2)
+Deleting (battery d1 b2)
+Adding (at d1 w3)
+Adding (battery d1 b1)
+Updating (total-cost) (7) by 1 increase
+
+Checking next happening (time 8)
+Deleting (at d1 w3)
+Deleting (battery d1 b1)
+Adding (at d1 s1)
+Adding (battery d1 b0)
+Updating (total-cost) (8) by 1 increase
+
+Checking next happening (time 9)
+Adding (inspected s1)
+Adding (accessible ch-s)
+Updating (total-cost) (9) by 1 increase
+
+Checking next happening (time 10)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b5)
+Adding (at d3 hub)
+Adding (battery d3 b3)
+Updating (total-cost) (10) by 2 increase
+
+Checking next happening (time 11)
+Deleting (at d2 depot-e)
+Deleting (battery d2 b5)
+Adding (at d2 e1)
+Adding (battery d2 b4)
+Updating (total-cost) (12) by 1 increase
+
+Checking next happening (time 12)
 Deleting (carrying d2 comm1)
 Deleting (needs e1 comm1)
 Adding (empty d2)
 Adding (delivered comm1 e1)
 Adding (accessible e2)
-Updating (total-cost) (5) by 1 increase
-
-Checking next happening (time 7)
-Deleting (at d2 e1)
-Deleting (battery d2 b5)
-Adding (at d2 e2)
-Adding (battery d2 b3)
-Updating (total-cost) (6) by 2 increase
-
-Checking next happening (time 8)
-Deleting (at d3 ch-n)
-Deleting (battery d3 b6)
-Adding (at d3 n1)
-Adding (battery d3 b5)
-Updating (total-cost) (8) by 1 increase
-
-Checking next happening (time 9)
-Adding (inspected n1)
-Adding (accessible n2)
-Updating (total-cost) (9) by 1 increase
-
-Checking next happening (time 10)
-Deleting (at d3 n1)
-Deleting (battery d3 b5)
-Adding (at d3 n2)
-Adding (battery d3 b3)
-Updating (total-cost) (10) by 2 increase
-
-Checking next happening (time 11)
-Adding (inspected n2)
-Updating (total-cost) (12) by 1 increase
-
-Checking next happening (time 12)
-Deleting (at d1 w1)
-Deleting (battery d1 b5)
-Adding (at d1 w2)
-Adding (battery d1 b4)
 Updating (total-cost) (13) by 1 increase
 
 Checking next happening (time 13)
-Deleting (carrying d1 medkit1)
-Deleting (needs w2 medkit1)
-Adding (empty d1)
-Adding (delivered medkit1 w2)
+Deleting (at d2 e1)
+Deleting (battery d2 b4)
+Adding (at d2 depot-e)
+Adding (battery d2 b3)
 Updating (total-cost) (14) by 1 increase
 
 Checking next happening (time 14)
-Deleting (at d1 w2)
-Deleting (battery d1 b4)
-Adding (at d1 depot-w)
-Adding (battery d1 b2)
-Updating (total-cost) (15) by 2 increase
-
-Checking next happening (time 15)
-Deleting (supply-at medkit2 depot-w)
-Deleting (empty d1)
-Adding (carrying d1 medkit2)
-Updating (total-cost) (17) by 1 increase
-
-Checking next happening (time 16)
-Deleting (at d1 depot-w)
-Deleting (battery d1 b2)
-Adding (at d1 w1)
-Adding (battery d1 b1)
-Updating (total-cost) (18) by 1 increase
-
-Checking next happening (time 17)
-Deleting (carrying d1 medkit2)
-Deleting (needs w1 medkit2)
-Adding (empty d1)
-Adding (delivered medkit2 w1)
-Updating (total-cost) (19) by 1 increase
-
-Checking next happening (time 18)
-Deleting (at d2 e2)
-Deleting (battery d2 b3)
-Adding (at d2 e1)
-Adding (battery d2 b1)
-Updating (total-cost) (20) by 2 increase
-
-Checking next happening (time 19)
-Deleting (at d2 e1)
-Deleting (battery d2 b1)
-Adding (at d2 ch-e)
-Adding (battery d2 b0)
-Updating (total-cost) (22) by 1 increase
-
-Checking next happening (time 20)
-Deleting (battery d2 b0)
-Adding (battery d2 b6)
-Updating (total-cost) (23) by 1 increase
-
-Checking next happening (time 21)
-Deleting (at d2 ch-e)
-Deleting (battery d2 b6)
-Adding (at d2 e2)
-Adding (battery d2 b5)
-Updating (total-cost) (24) by 1 increase
-
-Checking next happening (time 22)
-Deleting (at d2 e2)
-Deleting (battery d2 b5)
-Adding (at d2 e1)
-Adding (battery d2 b3)
-Updating (total-cost) (25) by 2 increase
-
-Checking next happening (time 23)
-Deleting (at d2 e1)
-Deleting (battery d2 b3)
-Adding (at d2 depot-e)
-Adding (battery d2 b2)
-Updating (total-cost) (27) by 1 increase
-
-Checking next happening (time 24)
 Deleting (supply-at water1 depot-e)
 Deleting (empty d2)
 Adding (carrying d2 water1)
-Updating (total-cost) (28) by 1 increase
+Updating (total-cost) (15) by 1 increase
 
-Checking next happening (time 25)
+Checking next happening (time 15)
 Deleting (at d2 depot-e)
-Deleting (battery d2 b2)
+Deleting (battery d2 b3)
 Adding (at d2 e1)
-Adding (battery d2 b1)
-Updating (total-cost) (29) by 1 increase
+Adding (battery d2 b2)
+Updating (total-cost) (16) by 1 increase
 
-Checking next happening (time 26)
+Checking next happening (time 16)
 Deleting (at d2 e1)
-Deleting (battery d2 b1)
-Adding (at d2 ch-e)
-Adding (battery d2 b0)
-Updating (total-cost) (30) by 1 increase
-
-Checking next happening (time 27)
-Deleting (battery d2 b0)
-Adding (battery d2 b6)
-Updating (total-cost) (31) by 1 increase
-
-Checking next happening (time 28)
-Deleting (at d2 ch-e)
-Deleting (battery d2 b6)
+Deleting (battery d2 b2)
 Adding (at d2 e2)
-Adding (battery d2 b5)
-Updating (total-cost) (32) by 1 increase
+Adding (battery d2 b0)
+Updating (total-cost) (17) by 2 increase
 
-Checking next happening (time 29)
+Checking next happening (time 17)
 Deleting (carrying d2 water1)
 Deleting (needs e2 water1)
 Adding (empty d2)
 Adding (delivered water1 e2)
-Updating (total-cost) (33) by 1 increase
+Updating (total-cost) (19) by 1 increase
+
+Checking next happening (time 18)
+Deleting (at d3 hub)
+Deleting (battery d3 b3)
+Adding (at d3 ch-n)
+Adding (battery d3 b1)
+Updating (total-cost) (20) by 2 increase
+
+Checking next happening (time 19)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (22) by 1 increase
+
+Checking next happening (time 20)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b5)
+Adding (at d3 n1)
+Adding (battery d3 b4)
+Updating (total-cost) (23) by 1 increase
+
+Checking next happening (time 21)
+Adding (inspected n1)
+Adding (accessible n2)
+Updating (total-cost) (24) by 1 increase
+
+Checking next happening (time 22)
+Deleting (at d3 n1)
+Deleting (battery d3 b4)
+Adding (at d3 ch-n)
+Adding (battery d3 b3)
+Updating (total-cost) (25) by 1 increase
+
+Checking next happening (time 23)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b3)
+Adding (at d3 hub)
+Adding (battery d3 b1)
+Updating (total-cost) (26) by 2 increase
+
+Checking next happening (time 24)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (28) by 1 increase
+
+Checking next happening (time 25)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 depot-e)
+Adding (battery d3 b3)
+Updating (total-cost) (29) by 2 increase
+
+Checking next happening (time 26)
+Deleting (supply-at comm2 depot-e)
+Deleting (empty d3)
+Adding (carrying d3 comm2)
+Updating (total-cost) (31) by 1 increase
+
+Checking next happening (time 27)
+Deleting (at d3 depot-e)
+Deleting (battery d3 b3)
+Adding (at d3 hub)
+Adding (battery d3 b1)
+Updating (total-cost) (32) by 2 increase
+
+Checking next happening (time 28)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (34) by 1 increase
+
+Checking next happening (time 29)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 ch-n)
+Adding (battery d3 b3)
+Updating (total-cost) (35) by 2 increase
+
+Checking next happening (time 30)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b3)
+Adding (at d3 n1)
+Adding (battery d3 b2)
+Updating (total-cost) (37) by 1 increase
+
+Checking next happening (time 31)
+Deleting (at d3 n1)
+Deleting (battery d3 b2)
+Adding (at d3 ch-n)
+Adding (battery d3 b1)
+Updating (total-cost) (38) by 1 increase
+
+Checking next happening (time 32)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (39) by 1 increase
+
+Checking next happening (time 33)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b5)
+Adding (at d3 n1)
+Adding (battery d3 b4)
+Updating (total-cost) (40) by 1 increase
+
+Checking next happening (time 34)
+Deleting (at d3 n1)
+Deleting (battery d3 b4)
+Adding (at d3 n2)
+Adding (battery d3 b2)
+Updating (total-cost) (41) by 2 increase
+
+Checking next happening (time 35)
+Deleting (carrying d3 comm2)
+Deleting (needs n2 comm2)
+Adding (empty d3)
+Adding (delivered comm2 n2)
+Adding (accessible n3)
+Updating (total-cost) (43) by 1 increase
+
+Checking next happening (time 36)
+Deleting (at d3 n2)
+Deleting (battery d3 b2)
+Adding (at d3 n3)
+Adding (battery d3 b1)
+Updating (total-cost) (44) by 1 increase
+
+Checking next happening (time 37)
+Adding (inspected n3)
+Updating (total-cost) (45) by 1 increase
+
+Checking next happening (time 38)
+Deleting (at d3 n3)
+Deleting (battery d3 b1)
+Adding (at d3 ch-n)
+Adding (battery d3 b0)
+Updating (total-cost) (46) by 1 increase
+
+Checking next happening (time 39)
+Deleting (battery d3 b0)
+Adding (battery d3 b5)
+Updating (total-cost) (47) by 1 increase
+
+Checking next happening (time 40)
+Deleting (at d3 ch-n)
+Deleting (battery d3 b5)
+Adding (at d3 hub)
+Adding (battery d3 b3)
+Updating (total-cost) (48) by 2 increase
+
+Checking next happening (time 41)
+Deleting (at d3 hub)
+Deleting (battery d3 b3)
+Adding (at d3 s1)
+Adding (battery d3 b1)
+Updating (total-cost) (50) by 2 increase
+
+Checking next happening (time 42)
+Deleting (at d3 s1)
+Deleting (battery d3 b1)
+Adding (at d3 ch-s)
+Adding (battery d3 b0)
+Updating (total-cost) (52) by 1 increase
+
+Checking next happening (time 43)
+Deleting (battery d3 b0)
+Adding (battery d3 b5)
+Updating (total-cost) (53) by 1 increase
+
+Checking next happening (time 44)
+Deleting (at d3 ch-s)
+Deleting (battery d3 b5)
+Adding (at d3 s1)
+Adding (battery d3 b4)
+Updating (total-cost) (54) by 1 increase
+
+Checking next happening (time 45)
+Deleting (at d3 s1)
+Deleting (battery d3 b4)
+Adding (at d3 w3)
+Adding (battery d3 b3)
+Updating (total-cost) (55) by 1 increase
+
+Checking next happening (time 46)
+Deleting (at d3 w3)
+Deleting (battery d3 b3)
+Adding (at d3 s1)
+Adding (battery d3 b2)
+Updating (total-cost) (56) by 1 increase
+
+Checking next happening (time 47)
+Deleting (at d3 s1)
+Deleting (battery d3 b2)
+Adding (at d3 hub)
+Adding (battery d3 b0)
+Updating (total-cost) (57) by 2 increase
+
+Checking next happening (time 48)
+Deleting (battery d3 b0)
+Adding (battery d3 b5)
+Updating (total-cost) (59) by 1 increase
+
+Checking next happening (time 49)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 depot-w)
+Adding (battery d3 b3)
+Updating (total-cost) (60) by 2 increase
+
+Checking next happening (time 50)
+Deleting (supply-at water2 depot-w)
+Deleting (empty d3)
+Adding (carrying d3 water2)
+Updating (total-cost) (62) by 1 increase
+
+Checking next happening (time 51)
+Deleting (at d3 depot-w)
+Deleting (battery d3 b3)
+Adding (at d3 hub)
+Adding (battery d3 b1)
+Updating (total-cost) (63) by 2 increase
+
+Checking next happening (time 52)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (65) by 1 increase
+
+Checking next happening (time 53)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 s1)
+Adding (battery d3 b3)
+Updating (total-cost) (66) by 2 increase
+
+Checking next happening (time 54)
+Deleting (at d3 s1)
+Deleting (battery d3 b3)
+Adding (at d3 w3)
+Adding (battery d3 b2)
+Updating (total-cost) (68) by 1 increase
+
+Checking next happening (time 55)
+Deleting (carrying d3 water2)
+Deleting (needs w3 water2)
+Adding (empty d3)
+Adding (delivered water2 w3)
+Updating (total-cost) (69) by 1 increase
+
+Checking next happening (time 56)
+Deleting (at d3 w3)
+Deleting (battery d3 b2)
+Adding (at d3 s1)
+Adding (battery d3 b1)
+Updating (total-cost) (70) by 1 increase
+
+Checking next happening (time 57)
+Deleting (at d3 s1)
+Deleting (battery d3 b1)
+Adding (at d3 ch-s)
+Adding (battery d3 b0)
+Updating (total-cost) (71) by 1 increase
+
+Checking next happening (time 58)
+Deleting (battery d3 b0)
+Adding (battery d3 b5)
+Updating (total-cost) (72) by 1 increase
+
+Checking next happening (time 59)
+Deleting (at d3 ch-s)
+Deleting (battery d3 b5)
+Adding (at d3 s1)
+Adding (battery d3 b4)
+Updating (total-cost) (73) by 1 increase
+
+Checking next happening (time 60)
+Deleting (at d3 s1)
+Deleting (battery d3 b4)
+Adding (at d3 ch-s)
+Adding (battery d3 b3)
+Updating (total-cost) (74) by 1 increase
+
+Checking next happening (time 61)
+Deleting (at d3 ch-s)
+Deleting (battery d3 b3)
+Adding (at d3 s1)
+Adding (battery d3 b2)
+Updating (total-cost) (75) by 1 increase
+
+Checking next happening (time 62)
+Deleting (at d3 s1)
+Deleting (battery d3 b2)
+Adding (at d3 hub)
+Adding (battery d3 b0)
+Updating (total-cost) (76) by 2 increase
+
+Checking next happening (time 63)
+Deleting (battery d3 b0)
+Adding (battery d3 b5)
+Updating (total-cost) (78) by 1 increase
+
+Checking next happening (time 64)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 depot-w)
+Adding (battery d3 b3)
+Updating (total-cost) (79) by 2 increase
+
+Checking next happening (time 65)
+Deleting (supply-at medkit2 depot-w)
+Deleting (empty d3)
+Adding (carrying d3 medkit2)
+Updating (total-cost) (81) by 1 increase
+
+Checking next happening (time 66)
+Deleting (at d3 depot-w)
+Deleting (battery d3 b3)
+Adding (at d3 hub)
+Adding (battery d3 b1)
+Updating (total-cost) (82) by 2 increase
+
+Checking next happening (time 67)
+Deleting (battery d3 b1)
+Adding (battery d3 b5)
+Updating (total-cost) (84) by 1 increase
+
+Checking next happening (time 68)
+Deleting (at d3 hub)
+Deleting (battery d3 b5)
+Adding (at d3 s1)
+Adding (battery d3 b3)
+Updating (total-cost) (85) by 2 increase
+
+Checking next happening (time 69)
+Deleting (at d3 s1)
+Deleting (battery d3 b3)
+Adding (at d3 ch-s)
+Adding (battery d3 b2)
+Updating (total-cost) (87) by 1 increase
+
+Checking next happening (time 70)
+Deleting (at d3 ch-s)
+Deleting (battery d3 b2)
+Adding (at d3 s2)
+Adding (battery d3 b0)
+Updating (total-cost) (88) by 2 increase
+
+Checking next happening (time 71)
+Deleting (carrying d3 medkit2)
+Deleting (needs s2 medkit2)
+Adding (empty d3)
+Adding (delivered medkit2 s2)
+Updating (total-cost) (90) by 1 increase
 Plan executed successfully - checking goal
 Plan valid
-Final value: 34 
+Final value: 91 
 
 Successful plans:
-Value: 34
- plans/large-A-lama.1.plan 34 
+Value: 91
+ plans/large-A-lama.1.plan 91 
 

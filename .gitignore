@@ -1,1 +1,4 @@
+/.vscode/*
 /figures/*
+/runs-10min-8GB/*
+/runs-60min-8GB/*
