@@ -32,28 +32,17 @@ File naming: `<instance>-<model>-<planner>`, for example `large-A-lamafirst`.
 | model | `A` (`domain-A.pddl`) \| `B` (`domain-B.pddl`) |
 | planner | `lamafirst` = `--alias lama-first`<br>`astar` = `--search "astar(lmcut())"`<br>`lama` = `--alias lama` (anytime LAMA) |
 
-Anytime LAMA writes a new plan each time it finds a cheaper one:
-`plans/<name>.plan.1`, `plans/<name>.plan.2`, … The highest number is the best
-plan of the run. Its VAL output is `validation/<name>.<N>.val`.
-A run with no plan file did not find a plan within the limits; the reason is
-at the end of its log in `logs/`.
+Anytime LAMA writes a new plan each time it finds a cheaper one: `plans/<name>.plan.1`, `plans/<name>.plan.2`, The highest number is the best plan of the run. Its VAL output is `validation/<name>.<N>.val`. A run with no plan file did not find a plan within the limits; the reason is at the end of its log in `logs/`.
 
 ## 2. Requirements
 
-- [Fast Downward](https://www.fast-downward.org), or its Docker image
-  `aibasel/downward`. We used the Docker image: the Fast Downward driver can
-  only enforce `--overall-memory-limit` on Linux, so on macOS a local build
-  stops with "Setting memory limits is not supported on your platform".
-- [VAL](https://github.com/KCL-Planning/VAL), built from source. The commands
-  below assume its `Validate` binary is on the `PATH`.
+- [Fast Downward](https://www.fast-downward.org), or its Docker image `aibasel/downward`. We used the Docker image: the Fast Downward driver can only enforce `--overall-memory-limit` on Linux, so on macOS a local build stops with "Setting memory limits is not supported on your platform".
+- [VAL](https://github.com/KCL-Planning/VAL), built from source. The commands below assume its `Validate` binary is on the `PATH`.
 
 ## 3. Running Fast Downward
 
-All runs use a 5-minute time limit and a 4 GB memory limit and are run from
-this folder. Replace `domain-A.pddl` with `domain-B.pddl` for Model B, and
-`problem-small.pddl` with the other problem files. With a local Linux build,
-replace `docker run --rm -v "$PWD":/work -w /work aibasel/downward` by
-`./fast-downward.py` and drop the `/work/` prefix of `--plan-file`.
+All runs use a 5-minute time limit and a 4 GB memory limit and are run from this folder. Replace `domain-A.pddl` with `domain-B.pddl` for Model B, and `problem-small.pddl` with the other problem files. With a local Linux build,
+replace `docker run --rm -v "$PWD":/work -w /work aibasel/downward` by `./fast-downward.py` and drop the `/work/` prefix of `--plan-file`.
 
 **LAMA-first:**
 
@@ -85,13 +74,11 @@ docker run --rm -v "$PWD":/work -w /work aibasel/downward \
     > logs/large-A-lama.log 2>&1
 ```
 
-All 24 runs (4 problems × 2 models × 3 configurations) were run one after the
-other, never in parallel, so that runtimes are comparable.
+All 24 runs (4 problems × 2 models × 3 configurations) were run one after the other, never in parallel, so that runtimes are comparable.
 
 ## 4. Validating with VAL
 
-Each plan is validated with the same domain and problem files given to the
-planner, in verbose mode:
+Each plan is validated with the same domain and problem files given to the planner, in verbose mode:
 
 ```sh
 Validate -v domain-A.pddl problem-small.pddl plans/small-A-astar.plan \
@@ -101,16 +88,11 @@ Validate -v domain-A.pddl problem-large.pddl plans/large-A-lama.plan.9 \
     > validation/large-A-lama.9.val
 ```
 
-Each `.val` file contains the type check of every action, a step-by-step
-replay of the plan and, on the last lines, `Plan valid` and
-`Final value: <plan cost>`.
+Each `.val` file contains the type check of every action, a step-by-step replay of the plan and, on the last lines, `Plan valid` and `Final value: <plan cost>`.
 
 ## 5. The folder `problem-large-60min-8GB/`
 
-With the required limits (5 min, 4 GB), A* + LM-cut does not solve
-`problem-large.pddl` under either model; in both cases the limit reached is
-time, not memory. To check whether a longer limit would help, we ran it again
-on Model A with a 60-minute time limit and an 8 GB memory limit:
+With the required limits (5 min, 4 GB), A* + LM-cut does not solve `problem-large.pddl` under either model; in both cases the limit reached is time, not memory. To check whether a longer limit would help, we ran it again on Model A with a 60-minute time limit and an 8 GB memory limit:
 
 ```sh
 docker run --rm -v "$PWD":/work -w /work aibasel/downward \
@@ -119,31 +101,16 @@ docker run --rm -v "$PWD":/work -w /work aibasel/downward \
     > problem-large-60min-8GB/large-A-astar.log 2>&1
 ```
 
-The log was produced before the domain files were renamed, so it shows the
-old name `domain_a.pddl`; the content of the domain is the same.
-
-A* still stopped at the time limit (3587 s) with no plan, after about 2.4
-million expanded states. It had expanded every state with f < 48, so the
-optimal cost of Model A is at least 48. Peak memory was only about 550 MB, so
-time, not memory, is the bottleneck. This is an extra experiment and is not
-part of the main results table, which keeps the required 5-minute limit.
+The log was produced before the domain files were renamed, so it shows the old name `domain_a.pddl`; the content of the domain is the same.
 
 ## 6. The file `results.csv`
 
-One row per run (24 rows), with the same data as the results tables of the
-report. The main columns are `instance`, `model`, `planner`, `solved`, `time`
-(total planner time, s), `length`, `cost`, `recharges`, `expanded`,
-`best_plan` and `val`. For anytime LAMA, `cost_sequence` lists the cost of
-every plan it found, and `best_found_s` the time at which the best one was
+One row per run (24 rows), with the same data as the results tables of the report. The main columns are `instance`, `model`, `planner`, `solved`, `time` (total planner time, s), `length`, `cost`, `recharges`, `expanded`, `best_plan` and `val`. For anytime LAMA, `cost_sequence` lists the cost of every plan it found, and `best_found_s` the time at which the best one was
 found.
 
 ## 7. The folder `plans/` (all generated plans)
 
-`plans/` contains every plan written by Fast Downward: 60 files for the 24
-runs (one file per LAMA-first or A* run, one file per improvement for anytime
-LAMA). Each plan has a VAL output with the same name in `validation/`.
-The best plan of each instance and model (marked \*) is printed in full in
-Appendix B of the report, and the VAL output of one plan per instance is in
+`plans/` contains every plan written by Fast Downward: 60 files for the 24 runs (one file per LAMA-first or A* run, one file per improvement for anytime LAMA). Each plan has a VAL output with the same name in `validation/`. The best plan of each instance and model (marked \*) is printed in full in Appendix B of the report, and the VAL output of one plan per instance is in
 Appendix C.
 
 | Run (`logs/<run>.log`) | Plan file(s) in `plans/` | Cost | VAL file in `validation/` |
@@ -173,5 +140,3 @@ Appendix C.
 | large-1drone-B-astar | large-1drone-B-astar.plan | 95\* | large-1drone-B-astar.val |
 | large-1drone-B-lama | large-1drone-B-lama.plan.1 … .5 | 95 | large-1drone-B-lama.\<N\>.val |
 
-For anytime LAMA the cost is that of the last (best) plan `.plan.N`; the costs
-of all its plans are in the `cost_sequence` column of `results.csv`.
