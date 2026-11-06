@@ -1,0 +1,9 @@
+Checking plan: plans/medium-A-lama.plan
+Plan executed successfully - checking goal
+Plan valid
+Final value: 47 
+
+Successful plans:
+Value: 47
+ plans/medium-A-lama.plan 47 
+
