@@ -1,9 +1,0 @@
-Checking plan: plans/small-A-lama.plan
-Plan executed successfully - checking goal
-Plan valid
-Final value: 10 
-
-Successful plans:
-Value: 10
- plans/small-A-lama.plan 10 
-

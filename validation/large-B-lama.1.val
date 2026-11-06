@@ -8,7 +8,7 @@ Type-checking deliver-supply
 ...action passes type checking.
 Type-checking recharge
 ...action passes type checking.
-Checking plan: plans/large-B-lama.1.plan
+Checking plan: plans/large-B-lama.plan.1
 Plan to validate:
 
 Plan size: 87
@@ -804,5 +804,5 @@ Final value: 105
 
 Successful plans:
 Value: 105
- plans/large-B-lama.1.plan 105 
+ plans/large-B-lama.plan.1 105 
 

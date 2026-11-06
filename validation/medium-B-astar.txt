@@ -1,9 +1,0 @@
-Checking plan: plans/medium-B-astar.plan
-Plan executed successfully - checking goal
-Plan valid
-Final value: 31 
-
-Successful plans:
-Value: 31
- plans/medium-B-astar.plan 31 
-

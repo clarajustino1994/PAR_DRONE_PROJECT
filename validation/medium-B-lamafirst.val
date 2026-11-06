@@ -1,0 +1,439 @@
+Type-checking fly
+...action passes type checking.
+Type-checking inspect
+...action passes type checking.
+Type-checking pick-up-supply
+...action passes type checking.
+Type-checking deliver-supply
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Checking plan: plans/medium-B-lamafirst.plan
+Plan to validate:
+
+Plan size: 46
+1:
+(fly drone1 depot site1 b6 b2 b4)
+ 
+2:
+(inspect drone1 site1)
+ 
+3:
+(fly drone1 site1 site2 b4 b1 b3)
+ 
+4:
+(inspect drone1 site2)
+ 
+5:
+(fly drone1 site2 site5 b3 b2 b1)
+ 
+6:
+(fly drone1 site5 site4 b1 b1 b0)
+ 
+7:
+(inspect drone1 site4)
+ 
+8:
+(pick-up-supply drone2 med1 depot)
+ 
+9:
+(fly drone2 depot station1 b6 b1 b5)
+ 
+10:
+(fly drone2 station1 site3 b5 b2 b3)
+ 
+11:
+(inspect drone2 site3)
+ 
+12:
+(deliver-supply drone2 med1 site3)
+ 
+13:
+(fly drone2 site3 station1 b3 b2 b1)
+ 
+14:
+(recharge drone2 station1 b1 b2)
+ 
+15:
+(fly drone2 station1 depot b2 b1 b1)
+ 
+16:
+(pick-up-supply drone2 water1 depot)
+ 
+17:
+(fly drone2 depot station1 b1 b1 b0)
+ 
+18:
+(recharge drone2 station1 b0 b1)
+ 
+19:
+(recharge drone2 station1 b1 b2)
+ 
+20:
+(recharge drone2 station1 b2 b3)
+ 
+21:
+(recharge drone2 station1 b3 b4)
+ 
+22:
+(recharge drone2 station1 b4 b5)
+ 
+23:
+(fly drone2 station1 site3 b5 b2 b3)
+ 
+24:
+(fly drone2 site3 site4 b3 b2 b1)
+ 
+25:
+(deliver-supply drone2 water1 site4)
+ 
+26:
+(fly drone2 site4 station2 b1 b1 b0)
+ 
+27:
+(recharge drone2 station2 b0 b1)
+ 
+28:
+(recharge drone2 station2 b1 b2)
+ 
+29:
+(recharge drone2 station2 b2 b3)
+ 
+30:
+(fly drone2 station2 site3 b3 b1 b2)
+ 
+31:
+(fly drone2 site3 station1 b2 b2 b0)
+ 
+32:
+(recharge drone2 station1 b0 b1)
+ 
+33:
+(recharge drone2 station1 b1 b2)
+ 
+34:
+(fly drone2 station1 depot b2 b1 b1)
+ 
+35:
+(pick-up-supply drone2 comm1 depot)
+ 
+36:
+(fly drone2 depot station1 b1 b1 b0)
+ 
+37:
+(recharge drone2 station1 b0 b1)
+ 
+38:
+(recharge drone2 station1 b1 b2)
+ 
+39:
+(recharge drone2 station1 b2 b3)
+ 
+40:
+(fly drone2 station1 site3 b3 b2 b1)
+ 
+41:
+(fly drone2 site3 station2 b1 b1 b0)
+ 
+42:
+(recharge drone2 station2 b0 b1)
+ 
+43:
+(recharge drone2 station2 b1 b2)
+ 
+44:
+(fly drone2 station2 site4 b2 b1 b1)
+ 
+45:
+(fly drone2 site4 site5 b1 b1 b0)
+ 
+46:
+(deliver-supply drone2 comm1 site5)
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 1)
+Deleting (at drone1 depot)
+Deleting (battery drone1 b6)
+Adding (at drone1 site1)
+Adding (battery drone1 b4)
+Updating (total-cost) (0) by 2 increase
+
+Checking next happening (time 2)
+Adding (inspected site1)
+Adding (accessible site2)
+Updating (total-cost) (2) by 1 increase
+
+Checking next happening (time 3)
+Deleting (at drone1 site1)
+Deleting (battery drone1 b4)
+Adding (at drone1 site2)
+Adding (battery drone1 b3)
+Updating (total-cost) (3) by 1 increase
+
+Checking next happening (time 4)
+Adding (inspected site2)
+Updating (total-cost) (4) by 1 increase
+
+Checking next happening (time 5)
+Deleting (at drone1 site2)
+Deleting (battery drone1 b3)
+Adding (at drone1 site5)
+Adding (battery drone1 b1)
+Updating (total-cost) (5) by 2 increase
+
+Checking next happening (time 6)
+Deleting (at drone1 site5)
+Deleting (battery drone1 b1)
+Adding (at drone1 site4)
+Adding (battery drone1 b0)
+Updating (total-cost) (7) by 1 increase
+
+Checking next happening (time 7)
+Adding (inspected site4)
+Updating (total-cost) (8) by 1 increase
+
+Checking next happening (time 8)
+Deleting (supply-at med1 depot)
+Deleting (empty drone2)
+Adding (carrying drone2 med1)
+Updating (total-cost) (9) by 1 increase
+
+Checking next happening (time 9)
+Deleting (at drone2 depot)
+Deleting (battery drone2 b6)
+Adding (at drone2 station1)
+Adding (battery drone2 b5)
+Updating (total-cost) (10) by 1 increase
+
+Checking next happening (time 10)
+Deleting (at drone2 station1)
+Deleting (battery drone2 b5)
+Adding (at drone2 site3)
+Adding (battery drone2 b3)
+Updating (total-cost) (11) by 2 increase
+
+Checking next happening (time 11)
+Adding (inspected site3)
+Updating (total-cost) (13) by 1 increase
+
+Checking next happening (time 12)
+Deleting (carrying drone2 med1)
+Deleting (needs site3 med1)
+Adding (empty drone2)
+Adding (delivered med1 site3)
+Updating (total-cost) (14) by 1 increase
+
+Checking next happening (time 13)
+Deleting (at drone2 site3)
+Deleting (battery drone2 b3)
+Adding (at drone2 station1)
+Adding (battery drone2 b1)
+Updating (total-cost) (15) by 2 increase
+
+Checking next happening (time 14)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (17) by 1 increase
+
+Checking next happening (time 15)
+Deleting (at drone2 station1)
+Deleting (battery drone2 b2)
+Adding (at drone2 depot)
+Adding (battery drone2 b1)
+Updating (total-cost) (18) by 1 increase
+
+Checking next happening (time 16)
+Deleting (supply-at water1 depot)
+Deleting (empty drone2)
+Adding (carrying drone2 water1)
+Updating (total-cost) (19) by 1 increase
+
+Checking next happening (time 17)
+Deleting (at drone2 depot)
+Deleting (battery drone2 b1)
+Adding (at drone2 station1)
+Adding (battery drone2 b0)
+Updating (total-cost) (20) by 1 increase
+
+Checking next happening (time 18)
+Deleting (battery drone2 b0)
+Adding (battery drone2 b1)
+Updating (total-cost) (21) by 1 increase
+
+Checking next happening (time 19)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (22) by 1 increase
+
+Checking next happening (time 20)
+Deleting (battery drone2 b2)
+Adding (battery drone2 b3)
+Updating (total-cost) (23) by 1 increase
+
+Checking next happening (time 21)
+Deleting (battery drone2 b3)
+Adding (battery drone2 b4)
+Updating (total-cost) (24) by 1 increase
+
+Checking next happening (time 22)
+Deleting (battery drone2 b4)
+Adding (battery drone2 b5)
+Updating (total-cost) (25) by 1 increase
+
+Checking next happening (time 23)
+Deleting (at drone2 station1)
+Deleting (battery drone2 b5)
+Adding (at drone2 site3)
+Adding (battery drone2 b3)
+Updating (total-cost) (26) by 2 increase
+
+Checking next happening (time 24)
+Deleting (at drone2 site3)
+Deleting (battery drone2 b3)
+Adding (at drone2 site4)
+Adding (battery drone2 b1)
+Updating (total-cost) (28) by 2 increase
+
+Checking next happening (time 25)
+Deleting (carrying drone2 water1)
+Deleting (needs site4 water1)
+Adding (empty drone2)
+Adding (delivered water1 site4)
+Updating (total-cost) (30) by 1 increase
+
+Checking next happening (time 26)
+Deleting (at drone2 site4)
+Deleting (battery drone2 b1)
+Adding (at drone2 station2)
+Adding (battery drone2 b0)
+Updating (total-cost) (31) by 1 increase
+
+Checking next happening (time 27)
+Deleting (battery drone2 b0)
+Adding (battery drone2 b1)
+Updating (total-cost) (32) by 1 increase
+
+Checking next happening (time 28)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (33) by 1 increase
+
+Checking next happening (time 29)
+Deleting (battery drone2 b2)
+Adding (battery drone2 b3)
+Updating (total-cost) (34) by 1 increase
+
+Checking next happening (time 30)
+Deleting (at drone2 station2)
+Deleting (battery drone2 b3)
+Adding (at drone2 site3)
+Adding (battery drone2 b2)
+Updating (total-cost) (35) by 1 increase
+
+Checking next happening (time 31)
+Deleting (at drone2 site3)
+Deleting (battery drone2 b2)
+Adding (at drone2 station1)
+Adding (battery drone2 b0)
+Updating (total-cost) (36) by 2 increase
+
+Checking next happening (time 32)
+Deleting (battery drone2 b0)
+Adding (battery drone2 b1)
+Updating (total-cost) (38) by 1 increase
+
+Checking next happening (time 33)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (39) by 1 increase
+
+Checking next happening (time 34)
+Deleting (at drone2 station1)
+Deleting (battery drone2 b2)
+Adding (at drone2 depot)
+Adding (battery drone2 b1)
+Updating (total-cost) (40) by 1 increase
+
+Checking next happening (time 35)
+Deleting (supply-at comm1 depot)
+Deleting (empty drone2)
+Adding (carrying drone2 comm1)
+Updating (total-cost) (41) by 1 increase
+
+Checking next happening (time 36)
+Deleting (at drone2 depot)
+Deleting (battery drone2 b1)
+Adding (at drone2 station1)
+Adding (battery drone2 b0)
+Updating (total-cost) (42) by 1 increase
+
+Checking next happening (time 37)
+Deleting (battery drone2 b0)
+Adding (battery drone2 b1)
+Updating (total-cost) (43) by 1 increase
+
+Checking next happening (time 38)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (44) by 1 increase
+
+Checking next happening (time 39)
+Deleting (battery drone2 b2)
+Adding (battery drone2 b3)
+Updating (total-cost) (45) by 1 increase
+
+Checking next happening (time 40)
+Deleting (at drone2 station1)
+Deleting (battery drone2 b3)
+Adding (at drone2 site3)
+Adding (battery drone2 b1)
+Updating (total-cost) (46) by 2 increase
+
+Checking next happening (time 41)
+Deleting (at drone2 site3)
+Deleting (battery drone2 b1)
+Adding (at drone2 station2)
+Adding (battery drone2 b0)
+Updating (total-cost) (48) by 1 increase
+
+Checking next happening (time 42)
+Deleting (battery drone2 b0)
+Adding (battery drone2 b1)
+Updating (total-cost) (49) by 1 increase
+
+Checking next happening (time 43)
+Deleting (battery drone2 b1)
+Adding (battery drone2 b2)
+Updating (total-cost) (50) by 1 increase
+
+Checking next happening (time 44)
+Deleting (at drone2 station2)
+Deleting (battery drone2 b2)
+Adding (at drone2 site4)
+Adding (battery drone2 b1)
+Updating (total-cost) (51) by 1 increase
+
+Checking next happening (time 45)
+Deleting (at drone2 site4)
+Deleting (battery drone2 b1)
+Adding (at drone2 site5)
+Adding (battery drone2 b0)
+Updating (total-cost) (52) by 1 increase
+
+Checking next happening (time 46)
+Deleting (carrying drone2 comm1)
+Deleting (needs site5 comm1)
+Adding (empty drone2)
+Adding (delivered comm1 site5)
+Updating (total-cost) (53) by 1 increase
+Plan executed successfully - checking goal
+Plan valid
+Final value: 54 
+
+Successful plans:
+Value: 54
+ plans/medium-B-lamafirst.plan 54 
+

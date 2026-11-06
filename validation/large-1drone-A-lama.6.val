@@ -8,7 +8,7 @@ Type-checking deliver-supply
 ...action passes type checking.
 Type-checking recharge
 ...action passes type checking.
-Checking plan: plans/large-1drone-A-lama.6.plan
+Checking plan: plans/large-1drone-A-lama.plan.6
 Plan to validate:
 
 Plan size: 63
@@ -612,5 +612,5 @@ Final value: 77
 
 Successful plans:
 Value: 77
- plans/large-1drone-A-lama.6.plan 77 
+ plans/large-1drone-A-lama.plan.6 77 
 

@@ -1,9 +1,0 @@
-Checking plan: plans/small-A-astar.plan
-Plan executed successfully - checking goal
-Plan valid
-Final value: 10 
-
-Successful plans:
-Value: 10
- plans/small-A-astar.plan 10 
-
